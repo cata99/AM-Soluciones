@@ -1,0 +1,594 @@
+/* Estilos generales */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Usamos la fuente Montserrat */
+    margin: 0;
+    padding: 0;
+    background-color: #c4c6cc;
+}
+
+#empresa, #clients, #services {
+    padding: 120px; /* Ajusta este valor según la altura de tu navbar */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0; /* Se coloca en la parte superior */
+    left: 0; /* Se alinea a la izquierda */
+    width: 100%; /* Ocupa el ancho */
+    z-index: 1000; /* Asegura que el navbar esté encima del contenido */
+}
+
+
+/* Estilo para la imagen */
+.navbar .logo {
+    width: 171px; /* Ajusta el tamaño de la imagen */
+    height: 100px;
+    object-fit: cover;
+    margin-left: 50px;
+}
+
+/* Contenedor de los botones */
+.navbar .nav-links {
+    display: flex;
+    margin-right: 50px;
+    font-size: larger;
+}
+
+/* Estilo para los botones */
+.navbar .nav-links a {
+    color: #49B1C6;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: transparent; /* Fondo transparente */
+    border: 2px solid transparent; /* Inicialmente, el borde es transparente */
+    transition: border-color 0.3s ease; /* Transición suave para el borde */
+}
+
+/* Separador vertical entre los botones */
+.navbar .nav-links a:not(:first-child) {
+    border-left: 1px solid #798c9b; /* Línea vertical gris claro */
+}
+
+/* Hover para los botones */
+.navbar .nav-links a:hover {
+    background-color: transparent; /* Fondo sigue siendo transparente */
+    border-color: #ddd; /* El borde se vuelve gris claro en hover */
+    border-radius: 15px;
+}
+
+/* Efecto de borde redondeado en hover */
+.navbar .nav-links a:not(:first-child):hover {
+    border-radius: 15px; /* Borde más redondeado al pasar el ratón */
+}
+
+.main-section-section {
+    background: url("/assests/download.jpeg");
+    padding: 100px;
+    padding-bottom: 72px;
+    height: 600px;
+    background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+
+/* Sección principal */
+.main-section {
+    text-align: center;
+    padding: 240px;
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
+    background-color: rgba(128, 128, 128, 0.6);
+
+
+}
+
+/* Título principal */
+.main-section h1 {
+    font-size: 36px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Subtítulo */
+.main-section p {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+/* Estilo para el botón */
+.main-section .btn {
+    padding: 12px 30px;
+    font-size: 18px;
+    color: white;
+    background-color: #49B1C6;;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover para el botón */
+.main-section .btn:hover {
+    background-color: #657c9a;
+}
+
+.us-section-section {
+    background-color: #a4b5c9;
+}
+
+.us-section {
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    margin: 40px auto;
+}
+
+.us-section h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Subtítulo */
+.us-section p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* Sección Nuestra Filosofía */
+.philosophy-section section {
+    padding: 40px;
+    background-color: #a4b5c9;
+}
+
+.philosophy-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+
+/* Texto a la izquierda */
+.philosophy-text {
+    width: 50%;
+    padding: 50px;
+}
+
+.philosophy-text h2 {
+    font-size: 35px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.philosophy-text ul {
+    font-size: 18px;
+    color: #666;
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.philosophy-text ul li {
+    margin-bottom: 10px;
+}
+
+/* Imagen a la derecha */
+.philosophy-image {
+    width: 50%;
+}
+
+/* Ajustar la imagen en pantallas pequeñas */
+@media (max-width: 768px) {
+    .philosophy-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .philosophy-text {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .philosophy-image {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 20px;
+    }
+}
+
+/* Estilo para la sección de información */
+.information {
+    padding: 40px;
+    background-color: #f9f9f9;
+}
+
+/* Contenedor de los divs dentro de la sección */
+.info-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px; /* Espacio entre los divs */
+}
+
+/* Estilo para cada div interno que es una tarjeta */
+.info-box {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Borde entre las tarjetas (divs) */
+.info-box:not(:last-child) {
+    border-right: solid #ddd; /* Línea de separación entre divs */
+}
+
+/* Estilo para el texto dentro de las tarjetas */
+.info-box h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.info-box p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.8; /* Espaciado entre las líneas de los párrafos */
+}
+
+/* Estilos en pantallas pequeñas */
+@media (max-width: 768px) {
+    .info-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-box {
+        margin-bottom: 20px;
+    }
+
+    /* Remover el borde entre las tarjetas en pantallas pequeñas */
+    .info-box:not(:last-child) {
+        border-right: none;
+    }
+}
+
+.services {
+    background: url("/assests/images.jpeg");
+    background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+
+/* Estilo para el título centrado */
+.services-title {
+    text-align: center;
+    font-size: 32px;
+    color: ghostwhite;
+    margin-bottom: 30px; /* Espacio debajo del título */
+    margin-top: 80px;
+}
+
+.services-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    gap: 20px; /* Espacio entre los divs */
+}
+
+/* Estilo para cada div interno */
+.services-box {
+    flex: 1; /* Hace que los tres divs tengan el mismo tamaño */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    text-align: left;
+    width: 50px;
+    height: 400px;
+}
+
+.services-box h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px; /* Espacio entre el título y el párrafo */
+}
+
+.service-image {
+    width: 100%;
+    height: 50%
+}
+
+/* Alineación de los párrafos en las cajas de servicios */
+.services-box p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 15px; /* Espacio entre los párrafos */
+}
+
+/* Estilos en pantallas pequeñas */
+@media (max-width: 768px) {
+    .services-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .services-box {
+        margin-bottom: 20px;
+    }
+}
+
+/* Estilo para el título centrado */
+.carousel-title {
+    text-align: center;
+    font-size: 32px;
+    color: #657c9a;
+    margin-bottom: 40px; /* Espacio debajo del título */
+}
+
+.carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Espacio entre las filas */
+    width: 100%; /* Asegura que la fila ocupe el ancho completo disponible */
+    justify-content: center; /* Centra las imágenes dentro de la fila */
+}
+
+.carousel-image {
+    width: 300px; /* Ancho fijo de 300px para las imágenes */
+    height: auto; /* Mantener la proporción de la imagen */
+    margin: 0 10px; /* Espacio entre las imágenes */
+    border-radius: 20px;
+}
+
+.carousel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.stats-section {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0;
+}
+
+.stat-box {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.stat-box p {
+    font-size: 16px;
+    color: #777;
+}
+
+
+/* Estilo para la sección de información */
+.stats-section {
+    padding: 40px;
+    background-color: #f9f9f9;
+}
+
+/* Contenedor de los divs dentro de la sección */
+.info-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px; /* Espacio entre los divs */
+}
+
+/* Estilo para cada div interno que es una tarjeta */
+.info-box {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Borde entre las tarjetas (divs) */
+.info-box:not(:last-child) {
+    border-right: solid #ddd; /* Línea de separación entre divs */
+}
+
+/* Estilo para el texto dentro de las tarjetas */
+.info-box h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.info-box p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.8; /* Espaciado entre las líneas de los párrafos */
+}
+
+/* Estilos en pantallas pequeñas */
+@media (max-width: 768px) {
+    .info-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-box {
+        margin-bottom: 20px;
+    }
+
+    /* Remover el borde entre las tarjetas en pantallas pequeñas */
+    .info-box:not(:last-child) {
+        border-right: none;
+    }
+}
+
+/* Sección Nuestra Filosofía */
+.partner-section section {
+    padding: 40px;
+    background-color: #a4b5c9;
+}
+
+.partner-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Texto a la izquierda */
+.partner-text {
+    width: 50%;
+    padding: 50px;
+}
+
+.partner-text h2 {
+    font-size: 35px;
+    color: #333;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-left: 150px;
+}
+
+.partner-image {
+    width: 50%;
+}
+
+
+/* Estilos básicos para la sección de Contacto */
+#contact {
+    background-color: #f4f4f4;
+    padding: 40px;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    margin-bottom: 30px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: left;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.social-media a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 1.1rem;
+}
+
+.social-media a:hover {
+    color: #007bff;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-media {
+        margin-top: 15px;
+    }
+}
+
+
