@@ -272,7 +272,7 @@ body {
 }
 
 .services {
-    background: url("/assests/images.jpeg");
+    background:#a4b5c9
     background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
