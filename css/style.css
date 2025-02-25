@@ -10,6 +10,27 @@ body {
     background-color: #c4c6cc;
 }
 
+p {
+    line-height: 2;
+    font-size: 0.5em
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+p, ul, li {
+    font-size: 1.5rem;
+}
+
 #empresa, #clients, #services {
     padding: 120px; /* Ajusta este valor según la altura de tu navbar */
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
@@ -74,7 +95,7 @@ body {
 }
 
 .main-section-section {
-    background: url("/assests/download.jpeg");
+    background: url("/assets/download.jpeg");
     padding: 100px;
     padding-bottom: 72px;
     height: 600px;
@@ -90,8 +111,7 @@ body {
 .main-section {
     text-align: center;
     padding: 240px;
-    max-width: 600px;
-    width: 100%;
+    max-width: 100%;
     margin: auto;
     background-color: rgba(128, 128, 128, 0.6);
 
@@ -100,14 +120,12 @@ body {
 
 /* Título principal */
 .main-section h1 {
-    font-size: 36px;
     color: white;
     margin-bottom: 20px;
 }
 
 /* Subtítulo */
 .main-section p {
-    font-size: 18px;
     color: white;
     margin-bottom: 30px;
 }
@@ -142,14 +160,12 @@ body {
 }
 
 .us-section h1 {
-    font-size: 36px;
     color: #333;
     margin-bottom: 20px;
 }
 
 /* Subtítulo */
 .us-section p {
-    font-size: 18px;
     color: #666;
     margin-bottom: 30px;
     line-height: 1.5;
@@ -175,7 +191,6 @@ body {
 }
 
 .philosophy-text h2 {
-    font-size: 35px;
     color: #333;
     margin-bottom: 20px;
 }
@@ -197,15 +212,14 @@ body {
 }
 
 /* Ajustar la imagen en pantallas pequeñas */
-@media (max-width: 768px) {
+@media (max-device-width: 768px) {
     .philosophy-section {
         flex-direction: column;
         text-align: center;
     }
 
     .philosophy-text {
-        width: 100%;
-        padding-right: 0;
+        width: 80%;
     }
 
     .philosophy-image {
@@ -216,7 +230,7 @@ body {
 }
 
 /* Estilo para la sección de información */
-.information {
+.info, .information {
     padding: 40px;
     background-color: #f9f9f9;
 }
@@ -243,26 +257,26 @@ body {
 
 /* Estilo para el texto dentro de las tarjetas */
 .info-box h3 {
-    font-size: 24px;
     color: #333;
     margin-bottom: 20px;
 }
 
 .info-box p {
-    font-size: 16px;
     color: #666;
     line-height: 1.8; /* Espaciado entre las líneas de los párrafos */
 }
 
 /* Estilos en pantallas pequeñas */
-@media (max-width: 768px) {
+@media (max-device-width: 768px) {
+
     .info-section {
-        flex-direction: column;
+        flex-direction: column; /* Apilar los divs verticalmente */
         text-align: center;
     }
 
     .info-box {
-        margin-bottom: 20px;
+        width: 95%; /* Ocupa el 100% del ancho en dispositivos móviles */
+        margin-bottom: 20px; /* Agregar espacio entre las cajas */
     }
 
     /* Remover el borde entre las tarjetas en pantallas pequeñas */
@@ -282,7 +296,6 @@ body {
 /* Estilo para el título centrado */
 .services-title {
     text-align: center;
-    font-size: 32px;
     color: ghostwhite;
     margin-bottom: 30px; /* Espacio debajo del título */
     margin-top: 80px;
@@ -311,7 +324,6 @@ body {
 }
 
 .services-box h3 {
-    font-size: 20px;
     color: #333;
     margin-bottom: 10px; /* Espacio entre el título y el párrafo */
 }
@@ -323,14 +335,13 @@ body {
 
 /* Alineación de los párrafos en las cajas de servicios */
 .services-box p {
-    font-size: 16px;
     color: #666;
     line-height: 1.8;
     margin-bottom: 15px; /* Espacio entre los párrafos */
 }
 
 /* Estilos en pantallas pequeñas */
-@media (max-width: 768px) {
+@media (max-device-width: 768px) {
     .services-section {
         flex-direction: column;
         text-align: center;
@@ -338,13 +349,13 @@ body {
 
     .services-box {
         margin-bottom: 20px;
+        width: 100%;
     }
 }
 
 /* Estilo para el título centrado */
 .carousel-title {
     text-align: center;
-    font-size: 32px;
     color: #657c9a;
     margin-bottom: 40px; /* Espacio debajo del título */
 }
@@ -376,6 +387,12 @@ body {
     align-items: center;
 }
 
+/* Estilo para móviles */
+@media (max-device-width: 768px) {
+    .carousel {
+        display: block;
+    }
+}
 
 .stats-section {
     display: flex;
@@ -388,14 +405,12 @@ body {
 }
 
 .stat-number {
-    font-size: 30px;
     font-weight: bold;
     color: #333;
     margin-bottom: 10px;
 }
 
 .stat-box p {
-    font-size: 16px;
     color: #777;
 }
 
@@ -428,19 +443,17 @@ body {
 
 /* Estilo para el texto dentro de las tarjetas */
 .info-box h3 {
-    font-size: 24px;
     color: #333;
     margin-bottom: 20px;
 }
 
 .info-box p {
-    font-size: 16px;
     color: #666;
     line-height: 1.8; /* Espaciado entre las líneas de los párrafos */
 }
 
 /* Estilos en pantallas pequeñas */
-@media (max-width: 768px) {
+@media (max-device-width: 768px) {
     .info-section {
         flex-direction: column;
         text-align: center;
@@ -477,7 +490,6 @@ body {
 }
 
 .partner-text h2 {
-    font-size: 35px;
     color: #333;
     margin-bottom: 20px;
     margin-top: 30px;
@@ -497,12 +509,10 @@ body {
 }
 
 .contact-section h2 {
-    font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
 .contact-section p {
-    font-size: 1.2rem;
     margin-bottom: 30px;
 }
 
@@ -538,7 +548,6 @@ body {
 }
 
 .contact-info p {
-    font-size: 1.1rem;
     margin: 5px 0;
 }
 
@@ -560,12 +569,10 @@ footer {
 }
 
 .contact-info h3 {
-    font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
 .contact-info p {
-    font-size: 1rem;
     margin: 5px 0;
 }
 
@@ -573,14 +580,13 @@ footer {
     color: #fff;
     text-decoration: none;
     margin-right: 15px;
-    font-size: 1.1rem;
 }
 
 .social-media a:hover {
     color: #007bff;
 }
 
-@media (max-width: 768px) {
+@media (max-device-width: 768px) {
     .footer-container {
         flex-direction: column;
         text-align: center;
@@ -589,6 +595,7 @@ footer {
     .social-media {
         margin-top: 15px;
     }
+
 }
 
 
