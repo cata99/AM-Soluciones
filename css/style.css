@@ -10,9 +10,9 @@ body {
     background-color: #c4c6cc;
 }
 
-p {
+p, ul, li {
     line-height: 2;
-    font-size: 0.5em
+    font-size: 1.5rem
 }
 
 h1 {
@@ -27,10 +27,6 @@ h3 {
     font-size: 2rem;
 }
 
-p, ul, li {
-    font-size: 1.5rem;
-}
-
 #empresa, #clients, #services {
     padding: 120px; /* Ajusta este valor según la altura de tu navbar */
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
@@ -43,19 +39,19 @@ p, ul, li {
     justify-content: space-between;
     align-items: center;
     background-color: #ffffff;
-    padding: 10px 20px;
     position: fixed;
     top: 0; /* Se coloca en la parte superior */
     left: 0; /* Se alinea a la izquierda */
     width: 100%; /* Ocupa el ancho */
     z-index: 1000; /* Asegura que el navbar esté encima del contenido */
+    border-radius: 5px;
 }
 
 
 /* Estilo para la imagen */
 .navbar .logo {
     width: 171px; /* Ajusta el tamaño de la imagen */
-    height: 100px;
+    height: 105px;
     object-fit: cover;
     margin-left: 50px;
 }
@@ -150,13 +146,17 @@ p, ul, li {
 
 .us-section-section {
     background-color: #a4b5c9;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 50vh; /* O cualquier altura necesaria */
+    padding: 0;
 }
 
 .us-section {
     text-align: center;
-    max-width: 600px;
+    max-width: 95%;
     width: 100%;
-    margin: 40px auto;
 }
 
 .us-section h1 {
@@ -320,17 +320,21 @@ p, ul, li {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
     text-align: left;
     width: 50px;
-    height: 400px;
 }
 
 .services-box h3 {
     color: #333;
     margin-bottom: 10px; /* Espacio entre el título y el párrafo */
+    font-size: 1.3rem;
 }
 
 .service-image {
     width: 100%;
     height: 50%
+}
+
+.services-box p {
+    font-size: 1.2rem;
 }
 
 /* Alineación de los párrafos en las cajas de servicios */
@@ -594,6 +598,14 @@ footer {
 
     .social-media {
         margin-top: 15px;
+    }
+
+    .main-section {
+        padding: 16% 0px;
+    }
+
+    .us-section {
+        font-size: 40px;
     }
 
 }
