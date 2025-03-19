@@ -94,7 +94,7 @@ h3 {
 }
 
 .main-section-section {
-    background: url("/assets/download.jpeg");
+    background: url("https://github.com/cata99/AM-Soluciones/blob/main/assets/download.jpeg");
     height: calc(100vh - 110px); /* Resta la altura del navbar para ocupar el resto de la pantalla */
     background-size: cover;
     background-position: center;
