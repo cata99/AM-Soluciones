@@ -6,8 +6,11 @@ html {
 body {
     font-family: 'Montserrat', sans-serif; /* Usamos la fuente Montserrat */
     margin: 0;
-    padding: 0;
     background-color: #c4c6cc;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 7%;
 }
 
 p, ul, li {
@@ -92,24 +95,22 @@ h3 {
 
 .main-section-section {
     background: url("/assets/download.jpeg");
-    padding: 100px;
-    padding-bottom: 72px;
-    height: 600px;
-    background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    height: calc(100vh - 110px); /* Resta la altura del navbar para ocupar el resto de la pantalla */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     border-radius: 5px;
+    align-content: center;
 }
 
 
 /* Sección principal */
 .main-section {
     text-align: center;
-    padding: 15%;
-    max-width: 100%;
-    margin: auto;
-    background-color: rgba(128, 128, 128, 0.6);
+    background-color: rgba(128, 128, 128, 0.88);
+    height: 45%;
+    padding: 0.5% 0;
 
 
 }
@@ -286,7 +287,6 @@ h3 {
 }
 
 .services {
-    background: #a4b5c9;
     background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -306,7 +306,6 @@ h3 {
     justify-content: space-between;
     align-items: stretch;
     padding: 2%;
-    background-color: #f9f9f9;
     border-radius: 5px;
     gap: 20px; /* Espacio entre los divs */
 }
