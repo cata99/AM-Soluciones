@@ -231,13 +231,13 @@ h3 {
 }
 
 /* Estilo para la sección de información */
-.info, .information {
+.info, .amount {
     padding: 40px;
     background-color: #f9f9f9;
 }
 
 /* Contenedor de los divs dentro de la sección */
-.info-section {
+.info-section, .amount-section {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
@@ -245,24 +245,25 @@ h3 {
 }
 
 /* Estilo para cada div interno que es una tarjeta */
-.info-box {
+.info-box, .amount-box {
     flex: 1;
     padding: 20px;
     text-align: center;
 }
 
 /* Borde entre las tarjetas (divs) */
-.info-box:not(:last-child) {
+.info-box:not(:last-child), .amount-box:not(:last-child) {
     border-right: solid #ddd; /* Línea de separación entre divs */
 }
 
 /* Estilo para el texto dentro de las tarjetas */
-.info-box h3 {
+.info-box, .amount-box h3 {
     color: #333;
     margin-bottom: 20px;
 }
 
-.info-box p {
+
+.info-box, .amount-box p {
     color: #666;
     line-height: 1.8; /* Espaciado entre las líneas de los párrafos */
 }
@@ -323,6 +324,15 @@ h3 {
     box-sizing: border-box;
     border: 1px solid #ccc;
     height: auto;
+}
+
+.services-box, .carousel-image {
+    transition: transform 0.3s ease; /* Añadimos una transición suave */
+    cursor: pointer; /* Cambia el cursor para indicar que es interactivo */
+}
+
+.services-box:hover, .carousel-image:hover {
+    transform: scale(1.05); /* Agranda el div en un 5% cuando se pasa el mouse */
 }
 
 .services-box h3 {
