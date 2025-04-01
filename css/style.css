@@ -287,31 +287,22 @@ h3 {
     }
 }
 
-.services {
-    background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-}
-
-
-/* Estilo para el título centrado */
+/* Sección de servicios */
 .services-title {
     text-align: center;
-    color: ghostwhite;
-    margin-bottom: 30px; /* Espacio debajo del título */
-    margin-top: 80px;
+    color: #657c9a;
 }
 
 .services-section {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    padding: 2%;
-    border-radius: 5px;
     gap: 20px; /* Espacio entre los divs */
+    flex-wrap: wrap; /* Asegura que las tarjetas se ajusten en pantallas pequeñas */
+    margin-top: 40px;
 }
 
-/* Estilo para cada div interno */
+/* Estilo para cada div de servicio */
 .services-box {
     display: flex;
     flex-direction: column;
@@ -320,42 +311,63 @@ h3 {
     padding: 2%;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left;
+    text-align: center;
     box-sizing: border-box;
     border: 1px solid #ccc;
-    height: auto;
+    cursor: pointer; /* Hace que el div sea clickeable */
+    transition: all 0.3s ease-in-out; /* Transición suave */
+    height: 100%;
 }
 
-.services-box, .carousel-image {
-    transition: transform 0.3s ease; /* Añadimos una transición suave */
-    cursor: pointer; /* Cambia el cursor para indicar que es interactivo */
+/* Estilo para las imágenes dentro de los divs */
+.service-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Añadir efecto de zoom en hover */
 }
 
-.services-box:hover, .carousel-image:hover {
-    transform: scale(1.05); /* Agranda el div en un 5% cuando se pasa el mouse */
+/* Efecto de hover para la imagen */
+.services-box:hover .service-image {
+    transform: scale(1.05); /* Le da un efecto de aumento en la imagen */
 }
 
+/* Estilo para los títulos dentro de los servicios */
 .services-box h3 {
     color: #333;
     font-size: 1.3rem;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    line-height: 2rem;
 }
 
-.service-image {
-    width: 100%;
-    aspect-ratio: 16/9; /* Mantiene la proporción sin importar el tamaño */
-    object-fit: cover;
-}
-
+/* Estilo para el párrafo dentro de los divs */
 .services-box p {
     font-size: 1.2rem;
-    flex: 1;
-}
-
-/* Alineación de los párrafos en las cajas de servicios */
-.services-box p {
     color: #666;
     line-height: 1.8;
+    display: none; /* El párrafo está oculto por defecto */
+    margin-top: 10px;
+    transition: all 0.3s ease;
 }
+
+/* Estilo para cuando el div se expande */
+.services-box.expanded {
+    padding-bottom: 20px; /* Espacio extra cuando se expande */
+}
+
+/* Mostrar el párrafo cuando el servicio está expandido */
+.services-box.expanded p {
+    display: block;
+}
+
+/* Hover sobre la caja de servicio */
+.services-box:hover {
+    transform: translateY(-5px); /* Eleva el servicio un poco al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Aumenta la sombra en hover */
+}
+
 
 /* Estilos en pantallas pequeñas */
 @media (max-device-width: 768px) {
@@ -368,46 +380,53 @@ h3 {
         margin-bottom: 20px;
         width: 100%;
     }
+
+    .services-box {
+        align-items: center;
+    }
+
 }
 
 /* Estilo para el título centrado */
+.carousel {
+    background-color: #A4B5C9;
+}
+
 .carousel-title {
     text-align: center;
     color: #657c9a;
-    margin-bottom: 40px; /* Espacio debajo del título */
 }
 
 .carousel-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
+    overflow: hidden; /* Oculta las imágenes fuera del contenedor */
+    position: relative;
 }
 
-.carousel-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px; /* Espacio entre las filas */
-    width: 100%; /* Asegura que la fila ocupe el ancho completo disponible */
-    justify-content: center; /* Centra las imágenes dentro de la fila */
+.carousel-images {
+    display: flex; /* Organiza las imágenes en una fila */
+    width: fit-content; /* La longitud del contenedor depende del contenido */
+    animation: slide 30s linear infinite; /* La animación es continua */
 }
 
 .carousel-image {
-    width: 300px; /* Ancho fijo de 300px para las imágenes */
-    height: auto; /* Mantener la proporción de la imagen */
-    margin: 0 10px; /* Espacio entre las imágenes */
-    border-radius: 20px;
+    width: 450px; /* Ajusta el tamaño de las imágenes */
+    height: auto;
+    object-fit: cover;
+    margin-right: 20px; /* Espacio entre las imágenes */
+    border-radius: 10%;
 }
 
-.carousel {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.carousel-images img:last-child {
+    margin-right: 0; /* Elimina el margen derecho de la última imagen */
 }
 
-/* Estilo para móviles */
-@media (max-device-width: 768px) {
-    .carousel {
-        display: block;
+@keyframes slide {
+    0% {
+        transform: translateX(0); /* Comienza al principio */
+    }
+    100% {
+        transform: translateX(-50%); /* Desplazamiento hacia la izquierda hasta el final de la primera sección */
     }
 }
 
@@ -568,23 +587,6 @@ h3 {
     margin: 5px 0;
 }
 
-/* Estilos para el footer */
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: left;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
 .contact-info h3 {
     margin-bottom: 10px;
 }
@@ -604,10 +606,6 @@ footer {
 }
 
 @media (max-device-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-    }
 
     .social-media {
         margin-top: 15px;
@@ -624,3 +622,62 @@ footer {
 }
 
 
+.contact-info, .about-info, .social-info {
+    width: 30%; /* Cada columna tiene un 30% de ancho */
+    padding: 10px; /* Espaciado interno para las columnas */
+}
+
+.contact-info h3, .about-info h3, .social-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.contact-info p, .about-info p, .social-info p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.social-info a {
+    color: white;
+    text-decoration: none;
+}
+
+.social-info a:hover {
+    text-decoration: underline;
+}
+
+
+footer {
+    background-color: #333; /* Fondo oscuro para el footer */
+    color: white; /* Texto blanco */
+    padding: 20px 0; /* Espaciado alrededor del footer */
+}
+
+.footer-container {
+    display: flex; /* Usamos flexbox para distribuir las columnas */
+    justify-content: space-between; /* Espacios equitativos entre las columnas */
+    max-width: 1200px; /* Máxima anchura */
+    margin: 0 auto; /* Centrado horizontal */
+    padding: 0 20px; /* Espaciado interno */
+}
+
+.footer-container h3 {
+    font-size: 1.17rem;
+}
+
+.footer-container p {
+    font-size: 1rem;
+}
+
+/* Estilos de responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Las columnas se apilan en dispositivos más pequeños */
+        align-items: center; /* Centramos las columnas */
+    }
+
+    .contact-info, .about-info, .social-info {
+        width: 80%; /* Hacemos las columnas más anchas en pantallas pequeñas */
+        margin-bottom: 20px; /* Añadimos un margen entre las columnas */
+    }
+}
