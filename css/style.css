@@ -1,683 +1,943 @@
-/* Estilos generales */
+/* ========================================
+   RESET Y VARIABLES CSS
+======================================== */
+
+:root {
+    /* Colores principales */
+    --primary-color: #49B1C6;
+    --secondary-color: #657c9a;
+    --accent-color: #7abed0;
+    --text-dark: #333333;
+    --text-light: #666666;
+    --text-white: #ffffff;
+    --bg-light: #f9f9f9;
+    --bg-dark: #333333;
+    --border-color: #dddddd;
+
+    /* Tipografía */
+    --font-family: 'Montserrat', sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+
+    /* Espaciado */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 0.75rem;
+    --spacing-base: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+
+    /* Breakpoints */
+    --mobile: 480px;
+    --tablet: 768px;
+    --desktop: 1024px;
+    --large: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html {
     scroll-behavior: smooth;
+    font-size: 16px;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif; /* Usamos la fuente Montserrat */
-    margin: 0;
-    background-color: #c4c6cc;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    padding-top: 5%;
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--accent-color);
+    overflow-x: hidden;
+    padding-top: 100px;
 }
 
-p, ul, li {
-    line-height: 2;
-    font-size: 1.5rem
+/* ========================================
+   UTILIDADES
+======================================== */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-base);
 }
 
-h1 {
-    font-size: 4rem;
+.section-title {
+    font-size: var(--font-size-4xl);
+    font-weight: 600;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
 }
 
-h2 {
-    font-size: 3rem;
+.clients-section .section-title {
+    font-size: var(--font-size-5xl);
+    margin-bottom: var(--spacing-xl);
+    color: var(--secondary-color);
 }
 
-h3 {
-    font-size: 2rem;
-}
+/* ========================================
+   NAVBAR RESPONSIVO
+======================================== */
 
-#empresa, #clients, #services {
-    padding: 120px; /* Ajusta este valor según la altura de tu navbar */
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-}
-
-/* Navbar */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff;
     position: fixed;
-    top: 0; /* Se coloca en la parte superior */
-    left: 0; /* Se alinea a la izquierda */
-    width: 100%; /* Ocupa el ancho */
-    z-index: 1000; /* Asegura que el navbar esté encima del contenido */
-    border-radius: 5px;
-}
-
-
-/* Estilo para la imagen */
-.navbar .logo {
-    width: 171px; /* Ajusta el tamaño de la imagen */
-    height: 105px;
-    object-fit: cover;
-    margin-left: 50px;
-}
-
-/* Contenedor de los botones */
-.navbar .nav-links {
-    display: flex;
-    margin-right: 50px;
-    font-size: larger;
-}
-
-/* Estilo para los botones */
-.navbar .nav-links a {
-    color: #49B1C6;
-    text-decoration: none;
-    padding: 10px 20px;
-    background-color: transparent; /* Fondo transparente */
-    border: 2px solid transparent; /* Inicialmente, el borde es transparente */
-    transition: border-color 0.3s ease; /* Transición suave para el borde */
-}
-
-/* Separador vertical entre los botones */
-.navbar .nav-links a:not(:first-child) {
-    border-left: 1px solid #798c9b; /* Línea vertical gris claro */
-}
-
-/* Hover para los botones */
-.navbar .nav-links a:hover {
-    background-color: transparent; /* Fondo sigue siendo transparente */
-    border-color: #ddd; /* El borde se vuelve gris claro en hover */
-    border-radius: 15px;
-}
-
-/* Efecto de borde redondeado en hover */
-.navbar .nav-links a:not(:first-child):hover {
-    border-radius: 15px; /* Borde más redondeado al pasar el ratón */
-}
-
-.main-section-section {
-    background: url('../assets/download.jpeg');
-    height: calc(100vh - 110px); /* Resta la altura del navbar para ocupar el resto de la pantalla */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-    align-content: center;
-}
-
-
-/* Sección principal */
-.main-section {
-    text-align: center;
-    background-color: rgba(128, 128, 128, 0.68);
-    height: 45%;
-    padding: 0.5% 0;
-
-
-}
-
-/* Título principal */
-.main-section h1 {
-    color: white;
-    margin-bottom: 20px;
-}
-
-/* Subtítulo */
-.main-section p {
-    color: white;
-    margin-bottom: 30px;
-}
-
-/* Estilo para el botón */
-.main-section .btn {
-    padding: 12px 30px;
-    font-size: 18px;
-    color: white;
-    background-color: #49B1C6;;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-/* Hover para el botón */
-.main-section .btn:hover {
-    background-color: #657c9a;
-}
-
-.us-section-section {
-    background-color: #a4b5c9;
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    height: 50vh; /* O cualquier altura necesaria */
-    padding: 0;
-}
-
-.us-section {
-    text-align: center;
-    max-width: 95%;
-    width: 100%;
-}
-
-.us-section h1 {
-    color: #333;
-    margin-bottom: 20px;
-}
-
-/* Subtítulo */
-.us-section p {
-    color: #666;
-    margin-bottom: 30px;
-    line-height: 1.5;
-}
-
-/* Sección Nuestra Filosofía */
-.philosophy-section section {
-    padding: 40px;
-    background-color: #a4b5c9;
-}
-
-.philosophy-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 5px;
-}
-
-/* Texto a la izquierda */
-.philosophy-text {
-    width: 50%;
-    padding: 50px;
-}
-
-.philosophy-text h2 {
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.philosophy-text ul {
-    font-size: 18px;
-    color: #666;
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-.philosophy-text ul li {
-    margin-bottom: 10px;
-}
-
-/* Imagen a la derecha */
-.philosophy-image {
-    width: 50%;
-}
-
-/* Ajustar la imagen en pantallas pequeñas */
-@media (max-device-width: 768px) {
-    .philosophy-section {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .philosophy-text {
-        width: 80%;
-    }
-
-    .philosophy-image {
-        width: 100%;
-        max-width: 100%;
-        margin-top: 20px;
-    }
-}
-
-/* Estilo para la sección de información */
-.info, .amount {
-    padding: 40px;
-    background-color: #f9f9f9;
-}
-
-/* Contenedor de los divs dentro de la sección */
-.info-section, .amount-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    gap: 20px; /* Espacio entre los divs */
-}
-
-/* Estilo para cada div interno que es una tarjeta */
-.info-box, .amount-box {
-    flex: 1;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Borde entre las tarjetas (divs) */
-.info-box:not(:last-child), .amount-box:not(:last-child) {
-    border-right: solid #ddd; /* Línea de separación entre divs */
-}
-
-/* Estilo para el texto dentro de las tarjetas */
-.info-box, .amount-box h3 {
-    color: #333;
-    margin-bottom: 20px;
-}
-
-
-.info-box, .amount-box p {
-    color: #666;
-    line-height: 1.8; /* Espaciado entre las líneas de los párrafos */
-}
-
-/* Estilos en pantallas pequeñas */
-@media (max-device-width: 768px) {
-
-    .info-section {
-        flex-direction: column; /* Apilar los divs verticalmente */
-        text-align: center;
-    }
-
-    .info-box {
-        width: 95%; /* Ocupa el 100% del ancho en dispositivos móviles */
-        margin-bottom: 20px; /* Agregar espacio entre las cajas */
-    }
-
-    /* Remover el borde entre las tarjetas en pantallas pequeñas */
-    .info-box:not(:last-child) {
-        border-right: none;
-    }
-}
-
-/* Sección de servicios */
-.services-title {
-    text-align: center;
-    color: #657c9a;
-}
-
-.services-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    gap: 20px; /* Espacio entre los divs */
-    flex-wrap: wrap; /* Asegura que las tarjetas se ajusten en pantallas pequeñas */
-    margin-top: 40px;
-}
-
-/* Estilo para cada div de servicio */
-.services-box {
-    display: flex;
-    flex-direction: column;
-    flex: 1; /* Mantiene los divs con el mismo tamaño */
-    background-color: #ffffff;
-    padding: 2%;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    cursor: pointer; /* Hace que el div sea clickeable */
-    transition: all 0.3s ease-in-out; /* Transición suave */
-    height: 100%;
-}
-
-/* Estilo para las imágenes dentro de los divs */
-.service-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    transition: transform 0.3s ease; /* Añadir efecto de zoom en hover */
-}
-
-/* Efecto de hover para la imagen */
-.services-box:hover .service-image {
-    transform: scale(1.05); /* Le da un efecto de aumento en la imagen */
-}
-
-/* Estilo para los títulos dentro de los servicios */
-.services-box h3 {
-    color: #333;
-    font-size: 1.3rem;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    line-height: 2rem;
-}
-
-/* Estilo para el párrafo dentro de los divs */
-.services-box p {
-    font-size: 1.2rem;
-    color: #666;
-    line-height: 1.8;
-    display: none; /* El párrafo está oculto por defecto */
-    margin-top: 10px;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background-color: var(--text-white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
     transition: all 0.3s ease;
 }
 
-/* Estilo para cuando el div se expande */
-.services-box.expanded {
-    padding-bottom: 20px; /* Espacio extra cuando se expande */
-}
-
-/* Mostrar el párrafo cuando el servicio está expandido */
-.services-box.expanded p {
-    display: block;
-}
-
-/* Hover sobre la caja de servicio */
-.services-box:hover {
-    transform: translateY(-5px); /* Eleva el servicio un poco al pasar el ratón */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Aumenta la sombra en hover */
-}
-
-
-/* Estilos en pantallas pequeñas */
-@media (max-device-width: 768px) {
-    .services-section {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .services-box {
-        margin-bottom: 20px;
-        width: 100%;
-    }
-
-    .services-box {
-        align-items: center;
-    }
-
-}
-
-/* Estilo para el título centrado */
-.carousel {
-    background-color: #A4B5C9;
-}
-
-.carousel-title {
-    text-align: center;
-    color: #657c9a;
-}
-
-.carousel-container {
-    width: 100%;
-    overflow: hidden; /* Oculta las imágenes fuera del contenedor */
-    position: relative;
-}
-
-.carousel-images {
-    display: flex; /* Organiza las imágenes en una fila */
-    width: fit-content; /* La longitud del contenedor depende del contenido */
-    animation: slide 30s linear infinite; /* La animación es continua */
-}
-
-.carousel-image {
-    width: 450px; /* Ajusta el tamaño de las imágenes */
-    height: auto;
-    object-fit: cover;
-    margin-right: 20px; /* Espacio entre las imágenes */
-    border-radius: 10%;
-}
-
-.carousel-images img:last-child {
-    margin-right: 0; /* Elimina el margen derecho de la última imagen */
-}
-
-@keyframes slide {
-    0% {
-        transform: translateX(0); /* Comienza al principio */
-    }
-    100% {
-        transform: translateX(-50%); /* Desplazamiento hacia la izquierda hasta el final de la primera sección */
-    }
-}
-
-.stats-section {
-    display: flex;
-    justify-content: space-around;
-    margin: 50px 0;
-}
-
-.stat-box {
-    text-align: center;
-}
-
-.stat-number {
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.stat-box p {
-    color: #777;
-}
-
-
-/* Estilo para la sección de información */
-.stats-section {
-    padding: 40px;
-    background-color: #f9f9f9;
-}
-
-/* Contenedor de los divs dentro de la sección */
-.info-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    gap: 20px; /* Espacio entre los divs */
-}
-
-/* Estilo para cada div interno que es una tarjeta */
-.info-box {
-    flex: 1;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Borde entre las tarjetas (divs) */
-.info-box:not(:last-child) {
-    border-right: solid #ddd; /* Línea de separación entre divs */
-}
-
-/* Estilo para el texto dentro de las tarjetas */
-.info-box h3 {
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.info-box p {
-    color: #666;
-    line-height: 1.8; /* Espaciado entre las líneas de los párrafos */
-}
-
-/* Estilos en pantallas pequeñas */
-@media (max-device-width: 768px) {
-    .info-section {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .info-box {
-        margin-bottom: 20px;
-    }
-
-    /* Remover el borde entre las tarjetas en pantallas pequeñas */
-    .info-box:not(:last-child) {
-        border-right: none;
-    }
-}
-
-/* Sección Nuestra Filosofía */
-.partner-section section {
-    padding: 40px;
-    background-color: #a4b5c9;
-}
-
-.partner-section {
+.navbar-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 5px;
+    height: 100%;
+    padding: 0 var(--spacing-base);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar-logo .logo {
+    height: 100px;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+/* Botón hamburguesa */
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-xs);
+    z-index: 1001;
+}
+
+.hamburger-line {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 3px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.navbar-toggle.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-toggle.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggle.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Menú de navegación */
+.navbar-menu {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.nav-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    padding: var(--spacing-sm) var(--spacing-base);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   SECCIÓN HERO
+======================================== */
+
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('../assets/download.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--spacing-2xl) var(--spacing-base);
+}
+
+.hero-content {
+    max-width: 800px;
+    color: var(--text-white);
+}
+
+.hero-title {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-base);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-xl);
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.hero-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    padding: var(--spacing-lg) var(--spacing-2xl);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: var(--font-size-lg);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(73, 177, 198, 0.3);
+}
+
+.hero-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(101, 124, 154, 0.4);
+}
+
+/* ========================================
+   SECCIÓN DE SERVICIOS
+======================================== */
+
+.services-section {
+    padding: var(--spacing-3xl) 0;
+    background-color: var(--bg-light);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+}
+
+.service-card {
+    background-color: var(--text-white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.service-image-container {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+}
+
+.service-image {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-/* Texto a la izquierda */
-.partner-text {
-    width: 50%;
-    padding: 50px;
+.service-card:hover .service-image {
+    transform: scale(1.05);
 }
 
-.partner-text h2 {
-    color: #333;
-    margin-bottom: 20px;
-    margin-top: 30px;
-    margin-left: 150px;
+.service-content {
+    padding: var(--spacing-xl);
 }
 
-.partner-image {
-    width: 50%;
-}
-
-
-/* Estilos básicos para la sección de Contacto */
-#contact {
-    background-color: #f4f4f4;
-    padding: 40px;
+.service-title {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-base);
     text-align: center;
 }
 
-.contact-section h2 {
-    margin-bottom: 20px;
+.service-description {
+    color: var(--text-light);
+    line-height: 1.7;
+    text-align: center;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
-.contact-section p {
-    margin-bottom: 30px;
+.service-card.expanded .service-description {
+    opacity: 1;
+    max-height: 200px;
+    margin-top: var(--spacing-base);
 }
 
-.contact-form {
-    margin-bottom: 30px;
+/* ========================================
+   SECCIÓN DE ESTADÍSTICAS
+======================================== */
+
+.stats-section {
+    padding: var(--spacing-3xl) 0;
+    background-color: var(--text-white);
 }
 
-.contact-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-xl);
 }
 
-.contact-form input, .contact-form textarea {
+.stat-item {
+    text-align: center;
+    padding: var(--spacing-xl);
+    border-radius: 15px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-white);
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-label {
+    font-size: var(--font-size-sm);
+    opacity: 0.9;
+    margin-bottom: var(--spacing-xs);
+}
+
+.stat-number {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+}
+
+.stat-description {
+    font-size: var(--font-size-base);
+    opacity: 0.9;
+}
+
+/* ========================================
+   SECCIÓN DE CLIENTES
+======================================== */
+
+.clients-section {
+    padding: var(--spacing-3xl) 0;
+    background-color: #f0f0f0;
+}
+
+.clients-carousel {
+    overflow: hidden;
+    position: relative;
+}
+
+.clients-track {
+    display: flex;
+    animation: scroll 12s linear infinite;
+    gap: var(--spacing-2xl);
+}
+
+.client-logo {
+    flex-shrink: 0;
+    width: 320px;
+    height: 240px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.client-logo:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.client-logo img {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    height: 100%;
+    object-fit: cover;
 }
 
-.contact-form button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
-.contact-form button:hover {
-    background-color: #0056b3;
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    padding: var(--spacing-3xl) 0 var(--spacing-base);
 }
 
-.contact-info p {
-    margin: 5px 0;
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-2xl);
 }
 
-.contact-info h3 {
-    margin-bottom: 10px;
+.footer-title {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: var(--spacing-lg);
+    color: var(--primary-color);
 }
 
-.contact-info p {
-    margin: 5px 0;
+.contact-item {
+    margin-bottom: var(--spacing-base);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
 }
 
-.social-media a {
-    color: #fff;
+.contact-item strong {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.contact-link {
+    color: var(--text-white);
     text-decoration: none;
-    margin-right: 15px;
+    transition: color 0.3s ease;
+    word-break: break-all;
+    font-size: var(--font-size-sm);
+    line-height: 1.4;
 }
 
-.social-media a:hover {
-    color: #007bff;
+.contact-link:hover {
+    color: var(--primary-color);
 }
 
-@media (max-device-width: 768px) {
-
-    .social-media {
-        margin-top: 15px;
-    }
-
-    .main-section {
-        padding: 16% 0px;
-    }
-
-    .us-section {
-        font-size: 40px;
-    }
-
+.footer-bottom {
+    text-align: center;
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid #444;
+    color: #999;
 }
 
+/* ========================================
+   MEDIA QUERIES - MÓVILES
+======================================== */
 
-.contact-info, .about-info, .social-info {
-    width: 30%; /* Cada columna tiene un 30% de ancho */
-    padding: 10px; /* Espaciado interno para las columnas */
-}
-
-.contact-info h3, .about-info h3, .social-info h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.contact-info p, .about-info p, .social-info p {
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-.social-info a {
-    color: white;
-    text-decoration: none;
-}
-
-.social-info a:hover {
-    text-decoration: underline;
-}
-
-
-footer {
-    background-color: #333; /* Fondo oscuro para el footer */
-    color: white; /* Texto blanco */
-    padding: 20px 0; /* Espaciado alrededor del footer */
-}
-
-.footer-container {
-    display: flex; /* Usamos flexbox para distribuir las columnas */
-    justify-content: space-between; /* Espacios equitativos entre las columnas */
-    max-width: 1200px; /* Máxima anchura */
-    margin: 0 auto; /* Centrado horizontal */
-    padding: 0 20px; /* Espaciado interno */
-}
-
-.footer-container h3 {
-    font-size: 1.17rem;
-}
-
-.footer-container p {
-    font-size: 1rem;
-}
-
-/* Estilos de responsividad para pantallas pequeñas */
 @media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column; /* Las columnas se apilan en dispositivos más pequeños */
-        align-items: center; /* Centramos las columnas */
+    /* Variables ajustadas para móviles */
+    :root {
+        --spacing-base: 0.75rem;
+        --spacing-lg: 1rem;
+        --spacing-xl: 1.5rem;
+        --spacing-2xl: 2rem;
+        --spacing-3xl: 2.5rem;
     }
 
-    .contact-info, .about-info, .social-info {
-        width: 80%; /* Hacemos las columnas más anchas en pantallas pequeñas */
-        margin-bottom: 20px; /* Añadimos un margen entre las columnas */
+    /* Navbar móvil */
+    .navbar-toggle {
+        display: flex;
     }
+
+    .navbar-menu {
+        position: fixed;
+        top: 100px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 100px);
+        background-color: var(--text-white);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: var(--spacing-2xl);
+        transition: left 0.3s ease;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-menu.active {
+        left: 0;
+    }
+
+    .nav-link {
+        font-size: var(--font-size-lg);
+        padding: var(--spacing-lg);
+        margin: var(--spacing-sm) 0;
+        width: 80%;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    .navbar-logo .logo {
+        height: 75px;
+    }
+
+    /* Hero section móvil */
+    .hero-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .hero-subtitle {
+        font-size: var(--font-size-sm);
+    }
+
+    .hero-btn {
+        padding: var(--spacing-base) var(--spacing-xl);
+        font-size: var(--font-size-base);
+    }
+
+    /* Servicios móvil */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .service-content {
+        padding: var(--spacing-lg);
+    }
+
+    .service-title {
+        font-size: var(--font-size-lg);
+    }
+
+    /* Estadísticas móvil */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-base);
+    }
+
+    .stat-item {
+        padding: var(--spacing-lg);
+    }
+
+    .stat-number {
+        font-size: var(--font-size-3xl);
+    }
+
+    /* Clientes móvil */
+    .client-logo {
+        width: 250px;
+        height: 180px;
+    }
+
+    /* Footer móvil */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        text-align: center;
+    }
+
+    .contact-item {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .contact-item strong {
+        font-size: var(--font-size-xs);
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .contact-link {
+        font-size: var(--font-size-xs);
+        word-break: break-word;
+    }
+
+    /* Página Nosotros - Móviles */
+    .about-title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .about-description {
+        font-size: var(--font-size-base);
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-base);
+    }
+
+    .mission-vision-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .philosophy-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-base);
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .values-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      justify-items: center; /* centra horizontalmente cada card */
+    }
+  
+    .value-item {
+      width: 90%; /* mantiene el tamaño original sin deformar */
+    }
+  
+    /* Última tarjeta centrada */
+    .value-item:last-child {
+      grid-column: 1 / -1; /* hace que ocupe toda la fila */
+      justify-self: center; /* y se centra */
+      width: 60%; /* mismo tamaño visual pero centrada */
+    }
+  }
+  
+  
+/* Centrar segunda fila de Filosofía en pantallas anchas */
+@media (min-width: 900px) {
+    .philosophy-grid .philosophy-card:nth-child(4) {
+        grid-column: 1;
+    }
+
+    .philosophy-grid .philosophy-card:nth-child(5) {
+        grid-column: 3;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes para móviles pequeños */
+    .hero-title {
+        font-size: var(--font-size-xl);
+    }
+
+    .section-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .clients-section .section-title {
+        font-size: var(--font-size-3xl);
+        color: var(--secondary-color);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-number {
+        font-size: var(--font-size-2xl);
+    }
+
+    .client-logo {
+        width: 200px;
+        height: 150px;
+    }
+
+    .navbar-logo .logo {
+        height: 65px;
+    }
+
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    /* Página Nosotros - Móviles pequeños */
+    .about-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .value-item {
+        padding: var(--spacing-base);
+    }
+
+    .mission-card,
+    .vision-card {
+        padding: var(--spacing-lg);
+    }
+
+    .philosophy-card {
+        padding: var(--spacing-base);
+    }
+}
+
+/* ========================================
+   PÁGINA NOSOTROS
+======================================== */
+
+/* Sección Hero de Nosotros */
+.about-hero-section {
+    background-color: var(--bg-light);
+    padding: var(--spacing-3xl) 0;
+    text-align: center;
+}
+
+.about-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-title {
+    font-size: var(--font-size-5xl);
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-xl);
+}
+
+.about-description {
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.about-description strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.about-description em {
+    color: var(--secondary-color);
+    font-style: normal;
+    text-decoration: underline;
+    text-decoration-color: var(--primary-color);
+    text-underline-offset: 3px;
+}
+
+/* Sección Valores, Misión y Visión */
+.values-mission-section {
+    background-color: #e8f4f8;
+    padding: var(--spacing-3xl) 0;
+}
+
+.values-section {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+}
+
+.value-item {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background-color: var(--text-white);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.value-item:hover {
+    transform: translateY(-5px);
+}
+
+.value-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-base);
+    color: var(--secondary-color);
+}
+
+.value-item h3 {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+/* Misión y Visión */
+.mission-vision-section {
+    margin-top: var(--spacing-3xl);
+}
+
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--spacing-2xl);
+    margin-top: var(--spacing-2xl);
+}
+
+.mission-card,
+.vision-card {
+    background-color: var(--text-white);
+    padding: var(--spacing-2xl);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.card-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-lg);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card-description {
+    font-size: var(--font-size-base);
+    line-height: 1.7;
+    color: var(--text-light);
+    margin: 0;
+}
+
+/* Sección Filosofía */
+
+.philosophy-section {
+    background-color: var(--bg-light);
+    padding: var(--spacing-3xl) 0;
+}
+
+.philosophy-grid {
+    display: grid;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+    max-width: 1200px; /* aumentamos el ancho máximo para que entren las 4 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.philosophy-card {
+    background-color: #f5f5f5;
+    padding: var(--spacing-xl);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.05);
+    border: 1px  solid #bcbcbc;
+    transition: transform 0.3s ease;
+}
+
+.philosophy-card:hover {
+    transform: translateY(-3px);
+}
+
+.philosophy-card p {
+    font-size: var(--font-size-md);
+    line-height: 1.6;
+    margin: 0;
+    color: var(--text-light);
+}
+
+.philosophy-card.special p {
+    color: var(--text-white);
+    font-weight: 600;
+}
+
+/* Navbar activo */
+.nav-link.active {
+    background-color: var(--primary-color);
+    color: var(--text-white);
+}
+
+/* ========================================
+   ANIMACIONES Y TRANSICIONES
+======================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.service-card,
+.stat-item,
+.footer-section {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Efectos de hover mejorados */
+.service-card:active {
+    transform: scale(0.98);
+}
+
+.nav-link:active {
+    transform: scale(0.95);
+}
+
+.hero-btn:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+/* ========================================
+   ACCESIBILIDAD
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Focus states para accesibilidad */
+.nav-link:focus,
+.hero-btn:focus,
+.service-card:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Mejoras para lectores de pantalla */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
