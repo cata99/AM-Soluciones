@@ -361,14 +361,31 @@ body {
 
 .clients-carousel {
     overflow: hidden;
-    position: relative;
+    width: 100%;
 }
 
 .clients-track {
     display: flex;
-    animation: scroll 12s linear infinite;
     gap: var(--spacing-2xl);
+    animation: scroll 30s linear infinite;
+    width: max-content;
 }
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.client-logo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 
 .client-logo {
     flex-shrink: 0;
